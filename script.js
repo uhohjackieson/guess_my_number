@@ -23,10 +23,13 @@ document.querySelector('.check').addEventListener('click', function () {
   //     document.querySelector('.score').textContent = new_score;
   //   }
 
+  // when there is no input
   if (!guess) {
     document.querySelector('.message').textContent = 'No number! 🥲';
+    // when player wins
   } else if (guess === number) {
     document.querySelector('.message').textContent = 'Correct!🎉';
+    // when guess is too high
   } else if (guess > number) {
     if (score > 1) {
       document.querySelector('.message').textContent = 'Too high!';
@@ -36,6 +39,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'You lose';
       document.querySelector('.score').textContent = 0;
     }
+    // when guess is too low
   } else if (guess < number) {
     if (score > 1) {
       document.querySelector('.message').textContent = 'Too low!';
